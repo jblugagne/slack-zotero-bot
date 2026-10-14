@@ -175,9 +175,9 @@ app.post("/slack/events", async (req, res) => {
 
   const urls = [...new Set((event.text || "").match(URL_REGEX) || [])];
   const filteredUrls = urls.filter(u => !isBlockedUrl(u));
-  if (!urls.length) return;
+  if (!filteredUrls.length) return;
 
-  const newUrls = urls.filter((u) => !seenLinks.has(u));
+  const newUrls = filteredUrls.filter((u) => !seenLinks.has(u));
   if (!newUrls.length) return;
 
   // Extract tags from the message
