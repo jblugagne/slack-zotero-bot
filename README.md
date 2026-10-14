@@ -59,6 +59,7 @@ cd slack-zotero-bot
 4. Click **Install to Workspace** and copy the **Bot User OAuth Token** (starts with `xoxb-`)
 5. Under **Basic Information**, copy the **Signing Secret**
 6. Under **Event Subscriptions**:
+   - If **Socket Mode** is enabled in your Slack app settings, disable it so Slack delivers events to the Request URL.
    - Enable Events
    - Subscribe to the bot event `message.channels`
    - Set the Request URL to your Railway domain (see step 4 below) — you can come back to this after deploying
